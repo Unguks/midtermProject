@@ -19,9 +19,10 @@ app.use(
 
 connectDb();
 
-// app.use(cors());
-// app.use(UserRoute);
-// app.use(VideoRoute);
+app.use(cors());
+app.use(commentRoute);
+app.use(productRoute);
+app.use(videoRoute);
 
 const listener = app.listen(port, function () {
     console.log("Listening on port " + listener.address().port);
