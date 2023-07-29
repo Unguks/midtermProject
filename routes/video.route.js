@@ -1,11 +1,11 @@
 const express = require("express")
-const { getAllVideos, getVideoById, saveVideos } = require("../models/video.model");
+const { getAllVideos, getVideoById, postVideos } = require("../models/video.model");
 app = express();
 
 const router = express.Router();
 
 router.get("/videos", getAllVideos);
-router.post("/:id/video", getVideoById);
-router.post("/:id/saveVideos", saveVideos);
+router.get("/:id/video", getVideoById);
+router.post("/:id/saveVideos", postVideos);
 
 module.exports = router;

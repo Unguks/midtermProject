@@ -27,7 +27,7 @@ const videosSchema = new mongoose.Schema({
     }
   };
 
-  const saveVideos = async (req, res) => {
+  const postVideos = async (req, res) => {
     const video = new Video(req.body);
     try {
         const insertedvideo = await videoss.save();
@@ -37,4 +37,4 @@ const videosSchema = new mongoose.Schema({
     }
 };
 
-module.exports = { getAllVideos, getVideoById, saveVideos};
+module.exports = { getAllVideos, getVideoById, postVideos};
