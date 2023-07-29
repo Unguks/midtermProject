@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const videosSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    age: { type: Number, min: 0 },
-    email: { type: String, required: true, unique: true },
+    titleVideo: { type: String, required: true },
+    linkVideo: { type: String, min: 0 },
+    thumbnail: { type: String, required: true, unique: true },
   });
   
   // Create a model based on the schema
