@@ -11,7 +11,7 @@ const commentsSchema = new mongoose.Schema({
 
   const saveComment = async (req, res) => {
     try {
-        const insertedcomment = await commentsSchema.updateOne({_id: req.params.id},{"$push": {"comment": req.body}});
+        const insertedcomment = await comments.updateOne({_id: req.params.id},{"$push": {"comment": req.body}});
         res.status(201).json({
             message: "Comment added successfully",
             data : {
@@ -26,7 +26,7 @@ const commentsSchema = new mongoose.Schema({
 
 const getComment = async (req, res) => {
   try {
-      const comment = await commentsSchema.find({_id: req.params.id}, {comment: 1});
+      const comment = await comments.find({_id: req.params.id}, {comment: 1});
       res.status(200).json(comment);
   } catch (error) {
       res.status(404).json({ message: error.message });

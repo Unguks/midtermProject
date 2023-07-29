@@ -11,12 +11,12 @@ const ProductsSchema = new mongoose.Schema({
 
   const getProduct = async (req, res) => {
     try {
-        const product = await ProductsSchema.find({_id: req.params.id}, {product: 1});
+        const product = await products.find({_id: req.params.id}, {product: 1});
         res.status(200).json(product);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
 };
 
-module.exports{ getProduct };
+module.exports =  getProduct;
   
