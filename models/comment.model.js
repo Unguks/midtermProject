@@ -34,3 +34,7 @@ const getComment = async (req, res) => {
 };
 
 module.exports = { saveComment, getComment };
+
+{
+    
+}
